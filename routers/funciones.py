@@ -8,8 +8,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 router = APIRouter()
 
 
-df = pd.read_csv('dataset_final.csv')
-df_games = pd.read_csv('output_steam_games_clean.csv')
+df = pd.read_parquet('dataset_final.parquet.gz')
+df_games = pd.read_parquet('output_steam_games_clean.parquet.gz')
 
 
 # Función que devuelve el año con más horas jugadas para dicho género.
@@ -76,7 +76,7 @@ def UsersRecommend(year: int) -> dict:
 
 # Función que devuelve el sentiment analysis segun el año.
 
-@router.get('/sentiment_analysis/{year}')
+@router.get('/sentiment_analysis/')
 def sentiment_analysis(publisher : str) -> dict:
     filtered_df = df[df['publisher'] == publisher]
     sentiment_counts = filtered_df['sentiment_analysis'].value_counts()
