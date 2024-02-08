@@ -58,4 +58,4 @@ Por último, se realizó el deployement de esta API utilizando Render.
 
 ## Enlaces : 
 - [API](https://fast-api-v7ev.onrender.com/docs#/)
-- [Video explicativo]
+- [Video explicativo](https://www.youtube.com/watch?v=1PmTM8zwO2Y)
