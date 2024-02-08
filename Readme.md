@@ -57,5 +57,5 @@ El modelo de Machine Learning desarrollado proporciona recomendaciones precisas 
 Por último, se realizó el deployement de esta API utilizando Render.
 
 ## Enlaces : 
-- [API]
+- [API](https://fast-api-v7ev.onrender.com/docs#/)
 - [Video explicativo]
