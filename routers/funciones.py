@@ -90,14 +90,23 @@ def sentiment_analysis(publisher : str) -> dict:
 
 # Modelo de Recomendación relación ítem-ítem aplicando la similitud del coseno
 
-muestra = df_games
+muestra = df_games.head(4000)
 tfidf = TfidfVectorizer(stop_words='english')
 muestra=muestra.fillna("")
 tdfid_matrix = tfidf.fit_transform(muestra['title'])
 cosine_similarity = linear_kernel( tdfid_matrix, tdfid_matrix)
+
  
 @router.get('/recomendacion_id/{id_producto}')
-def recomendacion(id_producto: int):
+def recomendacion(id_producto: int):    
+
+    #muestra = pd.read_parquet('output_steam_games_clean.parquet.gz')
+    
+    #tfidf = TfidfVectorizer(stop_words='english')
+    #muestra=muestra.fillna("")
+    #tdfid_matrix = tfidf.fit_transform(muestra['app_name'])
+    #cosine_similarity = linear_kernel( tdfid_matrix, tdfid_matrix)
+
     if id_producto not in muestra['id'].values:
         return {'mensaje': 'No existe el id del producto.'}
     else:  
